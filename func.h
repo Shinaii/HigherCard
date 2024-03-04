@@ -45,6 +45,7 @@ enum cardNames {
 
 //functions
 void fillDeck(GameInfo::Card &card, const char *name, const char *suit, int value);
+void makeDeck(GameInfo::Card deck[], int numCards, int cardIndex, const char* cardNamesStr[], const char* suitsStr[]);
 void randomiseDeck(GameInfo::Card deck[], int numCards);
 void printDeck(GameInfo::Card deck[], int numCards);
 char *getName(char *name);

@@ -2,7 +2,7 @@
 #include "func.h"
 #include <thread>
 
-bool debug = true;
+bool debug = false;
 
 int main() {
 
@@ -14,12 +14,7 @@ int main() {
 
     int cardIndex = 0;
 
-    for(int i = suits::HEARTS; i <= suits::SPADES; i++) {
-        for(int j = cardNames::Two; j <= cardNames::Ace; j++) {
-            fillDeck(deck[cardIndex], cardNamesStr[j], suitsStr[i], j+2);
-            cardIndex++;
-        }
-    }
+    makeDeck(deck, numCards, cardIndex, cardNamesStr, suitsStr);
 
     randomiseDeck(deck, numCards);
 

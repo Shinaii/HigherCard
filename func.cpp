@@ -16,6 +16,15 @@ void fillDeck(GameInfo::Card &card, const char *name, const char *suit, int valu
     }
 }
 
+void makeDeck(GameInfo::Card deck[], int numCards, int cardIndex, const char* cardNamesStr[], const char* suitsStr[]) {
+    for(int i = suits::HEARTS; i <= suits::SPADES; i++) {
+        for(int j = cardNames::Two; j <= cardNames::Ace; j++) {
+            fillDeck(deck[cardIndex], cardNamesStr[j], suitsStr[i], j+2);
+            cardIndex++;
+        }
+    }
+}
+
 void randomiseDeck(GameInfo::Card deck[], int numCards) {
     srand(time(0));
     for(int i = 0; i < numCards; i++) {
